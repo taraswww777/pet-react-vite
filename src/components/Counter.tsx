@@ -1,10 +1,9 @@
-import {useDispatch, useSelector } from "react-redux"
-import { RootState } from "../rtk/store"
 import {counterSlice} from '../rtk/counter/counterSlice.ts';
+import {useAppDispatch, useAppSelector} from '../rtk/hooks.ts';
 
 export function Counter() {
-  const count = useSelector((state: RootState) => state.counter.value)
-  const dispatch = useDispatch()
+  const count = useAppSelector((state) => state.counter.value)
+  const dispatch = useAppDispatch()
 
   return (
     <div>

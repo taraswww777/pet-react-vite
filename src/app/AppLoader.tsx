@@ -1,12 +1,14 @@
 import {Provider} from 'react-redux'
-import './App.css'
 import {store} from '../rtk/store.ts';
 import {PropsWithChildren} from 'react';
+import {ConfigProvider} from 'antd';
 
 export const AppLoader = ({children}: PropsWithChildren) => {
   return (
     <Provider store={store}>
-      {children}
+      <ConfigProvider>
+        {children}
+      </ConfigProvider>
     </Provider>
   )
 }

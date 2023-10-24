@@ -3,11 +3,16 @@ import {Counter} from '../components/Counter';
 import {Pokemon} from '../components/Pokemon.tsx';
 import {Posts} from '../components/Posts.tsx';
 import {AppLoader} from './AppLoader.tsx';
+import {MyForm} from '../components/MyForm';
 
 export function App() {
   return (
     <AppLoader>
       <Row gutter={16}>
+        <Col span={24}>
+          <Divider orientation="left">MyForm</Divider>
+          <MyForm />
+        </Col>
         <Col span={24}>
           <h1>redux-toolkit</h1>
         </Col>

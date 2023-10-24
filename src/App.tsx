@@ -3,6 +3,7 @@ import './App.css'
 import {store} from './rtk/store.ts';
 import {Counter} from './components/Counter';
 import {Pokemon} from './components/Pokemon.tsx';
+import {Posts} from './components/Posts.tsx';
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
       </div>
       <div>
         <Pokemon />
+      </div>
+      <div>
+        <Posts />
       </div>
     </Provider>
   )

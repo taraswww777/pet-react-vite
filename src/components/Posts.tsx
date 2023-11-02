@@ -16,7 +16,7 @@ export const Posts = () => {
         <>Loading...</>
       ) : data ? (
         <ol>
-          {data.map((post) => (
+          {data.slice(0, 3).map((post) => (
             <li key={post.id}>
               <h2 onClick={() => setOpenPostId(post.id)}>{post.title}</h2>
               <p>{post.body}</p>

@@ -1,4 +1,4 @@
-import {pokemonApi} from "../rtk/api/pokemon"
+import {pokemonApi} from "../../../rtk/api/pokemon.ts"
 
 export const Pokemon = () => {
   const {data, error, isLoading} = pokemonApi.useGetPokemonByNameQuery('bulbasaur')

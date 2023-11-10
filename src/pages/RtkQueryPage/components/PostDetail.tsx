@@ -1,7 +1,6 @@
-import {useMemo} from 'react';
-import {postApi} from '../rtk/api/postApi/postApi.ts';
-import {PostDto} from '../rtk/api/postApi/PostDto.ts';
-import {useAppSelector} from '../rtk/hooks.ts';
+import {postApi} from '../../../rtk/api/postApi/postApi.ts';
+import {PostDto} from '../../../rtk/api/postApi/PostDto.ts';
+import {useAppSelector} from '../../../rtk/hooks.ts';
 
 interface PostsDetailProps {
   postId: PostDto['id']

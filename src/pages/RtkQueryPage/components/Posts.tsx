@@ -1,6 +1,6 @@
-import {postApi} from '../rtk/api/postApi/postApi.ts';
+import {postApi} from '../../../rtk/api/postApi/postApi.ts';
 import {useState} from 'react';
-import {PostDto} from '../rtk/api/postApi/PostDto.ts';
+import {PostDto} from '../../../rtk/api/postApi/PostDto.ts';
 import {PostsDetail} from './PostDetail.tsx';
 
 export const Posts = () => {

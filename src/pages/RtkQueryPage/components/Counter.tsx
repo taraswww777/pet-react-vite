@@ -1,5 +1,5 @@
-import {counterSlice} from '../rtk/counter/counterSlice.ts';
-import {useAppDispatch, useAppSelector} from '../rtk/hooks.ts';
+import {counterSlice} from '../../../rtk/counter/counterSlice.ts';
+import {useAppDispatch, useAppSelector} from '../../../rtk/hooks.ts';
 
 export function Counter() {
   const count = useAppSelector((state) => state.counter.value)

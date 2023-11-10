@@ -1,6 +1,6 @@
 import {configureStore} from '@reduxjs/toolkit'
 import {counterSlice} from './counter/counterSlice.ts';
-import {pokemonApi} from './api/pokemon.ts';
+import {pokemonApi} from './api/pokemonApi/pokemonApi.ts';
 import {postApi} from './api/postApi/postApi.ts';
 import {pokemonSlice} from './counter/pokemonSlice.ts';
 

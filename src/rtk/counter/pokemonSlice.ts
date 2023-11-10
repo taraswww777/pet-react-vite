@@ -10,6 +10,18 @@ const initialState: PokemonState = {
   list: []
 }
 
+
+// const customGetPostList = createAsyncThunk('', async (data, thunkAPI) => {
+//   const response = await postApi.endpoints?.getPostList.initiate({})
+//   console.log(response)
+//   // const {data, error, isLoading} = postApi.useGetPostItemByIdQuery(1);
+//
+//   thunkAPI.dispatch(postApi.endpoints?.getPostList)
+//
+//   return thunkAPI;
+// });
+
+
 export const pokemonSlice = createSlice({
   name: 'pokemon',
   initialState,

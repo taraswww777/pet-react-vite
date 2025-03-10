@@ -20,12 +20,12 @@ const RtkQueryPage = () => {
             <Divider orientation="left">Posts</Divider>
             <Posts />
           </Col>
+          <Col span={24}>
+            <Divider orientation="left">PokemonBulbasaur</Divider>
+            <PokemonBulbasaur />
+          </Col>
         </>
       )}
-      <Col span={24}>
-        <Divider orientation="left">PokemonBulbasaur</Divider>
-        <PokemonBulbasaur />
-      </Col>
 
       <Col span={24}>
         <Divider orientation="left">PokemonListWithDetailSubPage</Divider>

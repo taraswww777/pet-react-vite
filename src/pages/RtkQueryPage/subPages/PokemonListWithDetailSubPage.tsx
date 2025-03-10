@@ -1,35 +1,39 @@
-import {useAppSelector} from '../../../rtk/hooks';
 import {pokemonApi} from '../../../rtk/api/pokemonApi';
 import {Spin} from 'antd';
-import {PokemonCard} from '../components/PokemonCard.tsx';
-// import {useAppDispatch, useAppSelector} from '../../../rtk/hooks';
-// import {pokemonSlice} from '../../../rtk/counter/pokemonSlice.ts';
+import {useAppDispatch, useAppSelector} from '../../../rtk/hooks';
+import {pokemonActions, pokemonSlice} from '../../../rtk/counter/pokemonSlice.ts';
+import {useEffect} from 'react';
 
 export const PokemonListWithDetailSubPage = () => {
-  // const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
 
-  const pokemonDetail = useAppSelector((state) => state.pokemon.detail)
-  const pokemonList = useAppSelector((state) => state.pokemon.list)
+  // const pokemonDetail = useAppSelector((state) => state.pokemon.detail)
+  const selectedPokemonList = useAppSelector((state) => state.pokemon.list);
 
-  // const init = () => dispatch(pokemonSlice.actions.increment());
+  console.log('pokemonSlice.actions:', pokemonSlice.actions)
 
-  const {data, isLoading} = pokemonApi.useGetPokemonListQuery(undefined);
+  const init = () => dispatch(pokemonActions.customGetRandomPokemon());
+
+  useEffect(() => {
+    init();
+  }, []);
+
+  // const {data, isLoading} = pokemonApi.useGetPokemonListQuery(undefined);
 
   return (
     <div>
 
       <h2>pokemonList</h2>
-      <pre>selected: {JSON.stringify(pokemonList)}</pre>
+      <p>selectedPokemonList: {JSON.stringify(selectedPokemonList)}</p>
 
-      {isLoading ? <Spin /> : (
-        <ul>
-          {data?.results?.map(({name}) => (<li>{name}</li>))}
-        </ul>
-      )}
-      <p>{JSON.stringify(data)}</p>
+      {/*{isLoading ? <Spin /> : (*/}
+      {/*  <ul>*/}
+      {/*    {data?.results?.map(({name}) => (<li key={name}>{name}</li>))}*/}
+      {/*  </ul>*/}
+      {/*)}*/}
 
-      <h2>pokemonDetail</h2>
-      <pre>{JSON.stringify(pokemonDetail)}</pre>
+      {/*<h2>pokemonDetail</h2>*/}
+      {/*<pre>{JSON.stringify(pokemonDetail)}</pre>*/}
     </div>
   );
 }

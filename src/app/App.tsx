@@ -1,32 +1,27 @@
-import {Col, Divider, Row} from 'antd';
-import {Counter} from '../components/Counter';
-import {Pokemon} from '../components/Pokemon.tsx';
-import {Posts} from '../components/Posts.tsx';
+import {Col, Row, Spin} from 'antd';
 import {AppLoader} from './AppLoader.tsx';
-import {MyForm} from '../components/MyForm';
+import { Route, Routes} from 'react-router-dom';
+import {Suspense} from 'react';
+import {AntdFormPage, HomePage, RtkQueryPage} from '../pages';
+import {MainMenu} from '../components/MainMenu.tsx';
+import {PAGE_UI_LINKS} from '../constants/pageUiLinks.ts';
+import {PAGE_NAMES} from '../constants/pageNames.ts';
 
 export function App() {
   return (
     <AppLoader>
       <Row gutter={16}>
         <Col span={24}>
-          <Divider orientation="left">MyForm</Divider>
-          <MyForm />
+          <MainMenu />
         </Col>
         <Col span={24}>
-          <h1>redux-toolkit</h1>
-        </Col>
-        <Col span={24}>
-          <Divider orientation="left">Counter</Divider>
-          <Counter />
-        </Col>
-        <Col span={24}>
-          <Divider orientation="left">Pokemon</Divider>
-          <Pokemon />
-        </Col>
-        <Col span={24}>
-          <Divider orientation="left">Posts</Divider>
-          <Posts />
+          <Suspense fallback={<Spin />}>
+            <Routes>
+              <Route path="/" Component={HomePage} />
+              <Route path={PAGE_UI_LINKS[PAGE_NAMES.AntdForm]} Component={AntdFormPage} />
+              <Route path={`${PAGE_UI_LINKS[PAGE_NAMES.RtkQuery]}`} Component={RtkQueryPage} />
+            </Routes>
+          </Suspense>
         </Col>
       </Row>
     </AppLoader>
